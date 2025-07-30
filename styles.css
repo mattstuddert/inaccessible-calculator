@@ -1,0 +1,205 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { 
+  font-family: 'League Spartan', sans-serif; 
+  background: hsl(222, 26%, 31%); 
+  color: white;
+  overflow-x: hidden;
+}
+.container { 
+  max-width: 500px; 
+  margin: 50px auto; 
+  padding: 20px;
+}
+.header { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  margin-bottom: 30px;
+}
+.calc-title { 
+  font-size: 32px; 
+  font-weight: 700;
+}
+.theme-switcher { 
+  display: flex; 
+  align-items: center; 
+  gap: 20px;
+}
+.theme-label { 
+  font-size: 12px; 
+  text-transform: uppercase; 
+  letter-spacing: 1px;
+}
+.theme-toggle { 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  gap: 5px;
+}
+.theme-numbers { 
+  display: flex; 
+  gap: 15px; 
+  font-size: 12px;
+}
+.toggle-container { 
+  background: hsl(223, 31%, 20%); 
+  padding: 5px; 
+  border-radius: 13px; 
+  display: flex; 
+  gap: 5px;
+}
+.toggle-btn { 
+  width: 16px; 
+  height: 16px; 
+  border-radius: 50%; 
+  cursor: pointer; 
+  user-select: none;
+}
+.toggle-btn.active { 
+  background: hsl(6, 63%, 50%);
+}
+.toggle-btn:not(.active) { 
+  background: transparent;
+}
+.screen { 
+  background: hsl(224, 36%, 15%); 
+  padding: 30px; 
+  border-radius: 10px; 
+  margin-bottom: 20px; 
+  text-align: right; 
+  font-size: 48px; 
+  font-weight: 700; 
+  min-height: 100px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: flex-end; 
+  word-break: break-all;
+}
+.keypad { 
+  background: hsl(223, 31%, 20%); 
+  padding: 25px; 
+  border-radius: 10px; 
+  display: grid; 
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 15px;
+}
+.key { 
+  border-radius: 10px; 
+  font-family: 'League Spartan', sans-serif; 
+  font-weight: 700; 
+  font-size: 32px; 
+  cursor: pointer; 
+  height: 60px; 
+  position: relative; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+.key.number, .key.operator { 
+  background: hsl(0, 0%, 90%); 
+  color: hsl(221, 14%, 31%); 
+  box-shadow: 0 4px 0 hsl(28, 16%, 65%);
+}
+.key.function { 
+  background: hsl(225, 21%, 49%); 
+  color: white; 
+  box-shadow: 0 4px 0 hsl(224, 28%, 35%); 
+  font-size: 20px;
+}
+.key.equals { 
+  background: hsl(6, 63%, 50%); 
+  color: white; 
+  box-shadow: 0 4px 0 hsl(6, 70%, 34%); 
+  grid-column: span 2;
+}
+.key.reset { 
+  grid-column: span 2;
+}
+.key:active { 
+  transform: translateY(2px); 
+  box-shadow: 0 2px 0 hsl(28, 16%, 65%);
+}
+.key.function:active { 
+  box-shadow: 0 2px 0 hsl(224, 28%, 35%);
+}
+.key.equals:active { 
+  box-shadow: 0 2px 0 hsl(6, 70%, 34%);
+}
+
+.theme2 { 
+  background: hsl(0, 0%, 90%); 
+  color: hsl(60, 10%, 19%);
+}
+.theme2 .screen { 
+  background: hsl(0, 0%, 93%);
+}
+.theme2 .keypad { 
+  background: hsl(0, 5%, 81%);
+}
+.theme2 .toggle-container { 
+  background: hsl(0, 5%, 81%);
+}
+.theme2 .toggle-btn.active { 
+  background: hsl(25, 98%, 40%);
+}
+.theme2 .key.function { 
+  background: hsl(185, 42%, 37%); 
+  box-shadow: 0 4px 0 hsl(185, 58%, 25%);
+}
+.theme2 .key.equals { 
+  background: hsl(25, 98%, 40%); 
+  box-shadow: 0 4px 0 hsl(25, 99%, 27%);
+}
+.theme2 .key.number, .theme2 .key.operator { 
+  background: hsl(0, 0%, 90%); 
+  box-shadow: 0 4px 0 hsl(35, 11%, 61%);
+}
+
+.theme3 { 
+  background: hsl(268, 75%, 9%); 
+  color: hsl(52, 100%, 62%);
+}
+.theme3 .screen { 
+  background: hsl(268, 71%, 12%);
+}
+.theme3 .keypad { 
+  background: hsl(268, 71%, 12%);
+}
+.theme3 .toggle-container { 
+  background: hsl(268, 71%, 12%);
+}
+.theme3 .toggle-btn.active { 
+  background: hsl(176, 100%, 44%);
+}
+.theme3 .key.function { 
+  background: hsl(281, 89%, 26%); 
+  color: white; 
+  box-shadow: 0 4px 0 hsl(285, 91%, 52%);
+}
+.theme3 .key.equals { 
+  background: hsl(176, 100%, 44%); 
+  color: hsl(198, 20%, 13%); 
+  box-shadow: 0 4px 0 hsl(177, 92%, 70%);
+}
+.theme3 .key.number, .theme3 .key.operator { 
+  background: hsl(268, 47%, 21%); 
+  color: hsl(52, 100%, 62%); 
+  box-shadow: 0 4px 0 hsl(290, 70%, 36%);
+}
+
+@media (max-width: 500px) {
+  .container { margin: 20px auto; padding: 15px; }
+  .screen { font-size: 32px; padding: 20px; }
+  .key { font-size: 24px; height: 50px; }
+  .key.function { font-size: 16px; }
+}
+
+.attribution { 
+  font-size: 11px; 
+  text-align: center; 
+  margin-top: 30px;
+}
+.attribution a { 
+  color: hsl(228, 45%, 44%);
+}

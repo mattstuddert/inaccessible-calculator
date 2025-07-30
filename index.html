@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Calculator</title>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1 class="calc-title">calc</h1>
+      <div class="theme-switcher">
+        <span class="theme-label">Theme</span>
+        <div class="theme-toggle">
+          <div class="theme-numbers">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+          </div>
+          <div class="toggle-container">
+            <div class="toggle-btn active" onclick="setTheme(1)"></div>
+            <div class="toggle-btn" onclick="setTheme(2)"></div>
+            <div class="toggle-btn" onclick="setTheme(3)"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="screen" id="screen">0</div>
+    
+    <div class="keypad">
+      <div class="key function" onclick="inputNumber('7')">7</div>
+      <div class="key function" onclick="inputNumber('8')">8</div>
+      <div class="key function" onclick="inputNumber('9')">9</div>
+      <div class="key function" onclick="deleteChar()">DEL</div>
+      
+      <div class="key number" onclick="inputNumber('4')">4</div>
+      <div class="key number" onclick="inputNumber('5')">5</div>
+      <div class="key number" onclick="inputNumber('6')">6</div>
+      <div class="key operator" onclick="inputOperator('+')">+</div>
+      
+      <div class="key number" onclick="inputNumber('1')">1</div>
+      <div class="key number" onclick="inputNumber('2')">2</div>
+      <div class="key number" onclick="inputNumber('3')">3</div>
+      <div class="key operator" onclick="inputOperator('-')">-</div>
+      
+      <div class="key operator" onclick="inputNumber('.')">.</div>
+      <div class="key number" onclick="inputNumber('0')">0</div>
+      <div class="key operator" onclick="inputOperator('/')">/</div>
+      <div class="key operator" onclick="inputOperator('*')">x</div>
+      
+      <div class="key function reset" onclick="reset()">RESET</div>
+      <div class="key equals" onclick="calculate()">=</div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
