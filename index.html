@@ -12,19 +12,29 @@
     <div class="header">
       <h1 class="calc-title">calc</h1>
       <div class="theme-switcher">
-        <span class="theme-label">Theme</span>
-        <div class="theme-toggle">
-          <div class="theme-numbers">
-            <span>1</span>
-            <span>2</span>
-            <span>3</span>
+        <fieldset class="theme-toggle">
+          <legend class="theme-label sr-only">Theme</legend>
+          <div class="theme-options">
+            <div class="theme-option">
+              <input type="radio" id="theme1" name="theme" value="1" checked>
+              <label for="theme1" class="theme-btn">
+                <span class="theme-number">1</span>
+              </label>
+            </div>
+            <div class="theme-option">
+              <input type="radio" id="theme2" name="theme" value="2">
+              <label for="theme2" class="theme-btn">
+                <span class="theme-number">2</span>
+              </label>
+            </div>
+            <div class="theme-option">
+              <input type="radio" id="theme3" name="theme" value="3">
+              <label for="theme3" class="theme-btn">
+                <span class="theme-number">3</span>
+              </label>
+            </div>
           </div>
-          <div class="toggle-container">
-            <div class="toggle-btn active" onclick="setTheme(1)"></div>
-            <div class="toggle-btn" onclick="setTheme(2)"></div>
-            <div class="toggle-btn" onclick="setTheme(3)"></div>
-          </div>
-        </div>
+        </fieldset>
       </div>
     </div>
     

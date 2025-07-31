@@ -1,4 +1,17 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 body { 
   font-family: 'League Spartan', sans-serif; 
   background: hsl(222, 26%, 31%); 
@@ -13,7 +26,7 @@ body {
 .header { 
   display: flex; 
   justify-content: space-between; 
-  align-items: center; 
+  align-items: center;  
   margin-bottom: 30px;
 }
 .calc-title { 
@@ -25,41 +38,65 @@ body {
   align-items: center; 
   gap: 20px;
 }
-.theme-label { 
-  font-size: 12px; 
-  text-transform: uppercase; 
-  letter-spacing: 1px;
-}
 .theme-toggle { 
+  border: none;
+  padding: 0;
+  margin: 0;
   display: flex; 
   flex-direction: column; 
   align-items: center; 
   gap: 5px;
 }
-.theme-numbers { 
-  display: flex; 
-  gap: 15px; 
-  font-size: 12px;
+.theme-label { 
+  font-size: 12px; 
+  text-transform: uppercase; 
+  letter-spacing: 1px;
+  color: inherit;
+  font-weight: inherit;
 }
-.toggle-container { 
+.theme-options { 
   background: hsl(223, 31%, 20%); 
   padding: 5px; 
   border-radius: 13px; 
   display: flex; 
   gap: 5px;
 }
-.toggle-btn { 
+.theme-option {
+  position: relative;
+}
+.theme-option input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.theme-btn { 
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 16px; 
   height: 16px; 
   border-radius: 50%; 
   cursor: pointer; 
   user-select: none;
+  background: transparent;
+  transition: background-color 0.2s ease;
 }
-.toggle-btn.active { 
+.theme-btn:hover {
+  background: hsla(6, 63%, 50%, 0.3);
+}
+.theme-option input[type="radio"]:checked + .theme-btn { 
   background: hsl(6, 63%, 50%);
 }
-.toggle-btn:not(.active) { 
-  background: transparent;
+.theme-option input[type="radio"]:focus + .theme-btn {
+  outline: 2px solid hsl(6, 63%, 50%);
+  outline-offset: 2px;
+}
+.theme-number {
+  position: absolute;
+  top: -20px;
+  font-size: 12px;
+  color: inherit;
 }
 .screen { 
   background: hsl(224, 36%, 15%); 
@@ -137,11 +174,17 @@ body {
 .theme2 .keypad { 
   background: hsl(0, 5%, 81%);
 }
-.theme2 .toggle-container { 
+.theme2 .theme-options { 
   background: hsl(0, 5%, 81%);
 }
-.theme2 .toggle-btn.active { 
+.theme2 .theme-option input[type="radio"]:checked + .theme-btn { 
   background: hsl(25, 98%, 40%);
+}
+.theme2 .theme-btn:hover {
+  background: hsla(25, 98%, 40%, 0.3);
+}
+.theme2 .theme-option input[type="radio"]:focus + .theme-btn {
+  outline-color: hsl(25, 98%, 40%);
 }
 .theme2 .key.function { 
   background: hsl(185, 42%, 37%); 
@@ -166,11 +209,17 @@ body {
 .theme3 .keypad { 
   background: hsl(268, 71%, 12%);
 }
-.theme3 .toggle-container { 
+.theme3 .theme-options { 
   background: hsl(268, 71%, 12%);
 }
-.theme3 .toggle-btn.active { 
+.theme3 .theme-option input[type="radio"]:checked + .theme-btn { 
   background: hsl(176, 100%, 44%);
+}
+.theme3 .theme-btn:hover {
+  background: hsla(176, 100%, 44%, 0.3);
+}
+.theme3 .theme-option input[type="radio"]:focus + .theme-btn {
+  outline-color: hsl(176, 100%, 44%);
 }
 .theme3 .key.function { 
   background: hsl(281, 89%, 26%); 
